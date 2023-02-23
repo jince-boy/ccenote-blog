@@ -12,6 +12,8 @@ NProgress.configure({
 router.beforeEach(async (to, from, next) => {
     NProgress.start();
     document.title=getPageTitle(store.getters.getConfig.title,to.meta.title)
+    document.querySelector('meta[name="keywords"]').setAttribute('content',store.getters.getConfig.keywords);
+    document.querySelector('meta[name="description"]').setAttribute('content', store.getters.getConfig.description);
     if (getConfig() && getMenu()) {
         next();
     } else {

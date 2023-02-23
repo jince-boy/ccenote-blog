@@ -191,6 +191,9 @@ export default {
       }).then(res => {
         if (res.data.status) {
           state.data = res.data.data;
+          document.title=getPageTitle(store.getters.getConfig.title,res.data.data.title)
+          document.querySelector('meta[name="keywords"]').setAttribute('content', res.data.data.keywords);
+          document.querySelector('meta[name="description"]').setAttribute('content', res.data.data.description);
         }
       })
       Prism.highlightAll();
