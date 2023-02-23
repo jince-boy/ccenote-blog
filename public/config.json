@@ -1,0 +1,5 @@
+{
+  "dev":"http://localhost/api",
+  "prod":"http://localhost/api",
+  "env":"dev"
+}
